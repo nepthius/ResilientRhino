@@ -37,6 +37,8 @@
         padding: 20px;
         background-color: #F3D3D9; /* Light pink color to promote warmth */
         color: #333;
+        margin: 0;
+        padding: 0;
     }
 
     .top-bar img {
