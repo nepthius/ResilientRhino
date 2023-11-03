@@ -3,12 +3,20 @@ import { getCountries, getCountryCode } from './countries';
 import CountryCard from './CountryCard';
 
 const CountryCardsContainer = ({ countries }) => {
+  console.log("countries: ", countries)
+  
   return (
+    
     <div id="resources">
-      {countries.map(country => {
-        const countryName = Object.keys(country)[0];
-        return <CountryCard key={countryName} countryName={countryName} />
-      })}
+      
+      {
+        Object.keys(countries).map((countryName) => {
+            return <CountryCard key={countryName} countryName={countryName} />;
+        })
+    }
+
+
+
     </div>
   );
 }
