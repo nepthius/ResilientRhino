@@ -39,14 +39,24 @@ const CountryDetails = () => {
             {countryData.countryName}
           </h2>
           <ul>
-            {countryData.countryResources.map(resource => (
-              <li key={resource.name}>
-                {resource.url ? <a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}</a> : resource.name}
-                {resource.url_info ? ` (${resource.url_info})` : ''}
-                {resource.phone && resource.phone.length > 0 && ` - Phone: ${resource.phone.map(phone => phone ? <a href={`tel:${phone}`} key={phone}>{phone}</a> : phone).join(' or ')}`}
-                {resource.phone_info ? ` (${resource.phone_info})` : ''}
-              </li>
-            ))}
+          {countryData.countryResources.map(resource => (
+            <li key={resource.name}>
+              {resource.url ? <a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}</a> : resource.name}
+              {resource.url_info ? ` (${resource.url_info})` : ''}
+              {resource.phone && resource.phone.length > 0 && (
+                <>
+                  {' - Phone: '}
+                  {resource.phone.map((phone, index) => (
+                    <span key={index}>
+                      <a href={`tel:${phone}`}>{phone}</a>
+                      {index < resource.phone.length - 1 ? ' or ' : ''}
+                    </span>
+                  ))}
+                </>
+              )}
+              {resource.phone_info ? ` (${resource.phone_info})` : ''}
+            </li>
+          ))}
           </ul>
         </>
       ) : (
