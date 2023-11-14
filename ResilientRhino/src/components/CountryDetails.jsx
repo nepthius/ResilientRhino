@@ -2,32 +2,31 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/country-details.css';
 import { getCountries, getCountryCode } from './countries';  // Assuming countries.js exports this
+import { useParams } from 'react-router-dom';
 
 const CountryDetails = () => {
   const [countryData, setCountryData] = useState(null);
+  const { countryName } = useParams();
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const countryName = searchParams.get('country');
+    const decodedCountryName = decodeURIComponent(countryName).replace(/-/g, ' '); // Decode and replace hyphens with spaces
     //const countryName = 'United States';
-    //console.log(getCountries())
+    console.log(countryName)
 
-    if (countryName!=null && countryName) {
-      const country = getCountries()[countryName];
+    if (decodedCountryName) {
+      const country = getCountries()[decodedCountryName];
 
       if (country) {
-        const countryCode = getCountryCode(countryName);
+        const countryCode = getCountryCode(decodedCountryName);
         const countryResources = country;
-        setCountryData({ countryCode, countryName, countryResources });
+        setCountryData({ countryCode, countryName: decodedCountryName, countryResources });
       } else {
         setCountryData({ countryName: 'Country not found' });
       }
     } else {
-        console.log("Country Name:", countryName);
-
-        
+      console.log("Country Name:", decodedCountryName);
     }
-  }, []);
+  }, [countryName]); // Make sure to add countryName to the dependency array
 
   if (!countryData) return null;
 

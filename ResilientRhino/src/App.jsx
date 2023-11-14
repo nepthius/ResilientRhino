@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import './App.css'
 import Home from './pages/home'
+import CountryDetails from './components/CountryDetails'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
               path="/"
               element={<Home />}
           />
+          <Route path="/country/:countryName" element={<CountryDetails />} />
+
         </Routes>
       </div>
       </BrowserRouter>

@@ -1,8 +1,13 @@
 import React from 'react';
 import { getCountryCode } from './countries';
+import { useNavigate } from 'react-router-dom';
 
 const CountryCard = ({ countryName }) => {
   const countryCode = getCountryCode(countryName);
+  const navigate = useNavigate();
+  const displayCountryDetails = (countryName) => {
+    navigate(`/country/${encodeURIComponent(countryName.replace(/\s+/g, '-'))}`);
+  }
   
   return (
     <div className="country-card" onClick={() => displayCountryDetails(countryName)}>
@@ -16,10 +21,6 @@ const CountryCard = ({ countryName }) => {
       </div>
     </div>
   );
-}
-
-const displayCountryDetails = (countryName) => {
-  window.location.href = `country-details.html?country=${encodeURIComponent(countryName)}`;
 }
 
 export default CountryCard;
