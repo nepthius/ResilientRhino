@@ -53,8 +53,13 @@ function SearchBar() {
 }
 
 const filterCountries = (term) => {
-    // Add your filtering logic here
-  }
+    const entries = Object.entries(getCountries());
 
+    const filteredEntries = entries.filter(([countryName, _]) => 
+        countryName.toLowerCase().includes(term.toLowerCase())
+    );
+
+    return Object.fromEntries(filteredEntries);
+};
 export default SearchBar;
 
