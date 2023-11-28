@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/country-details.css';
 import { getCountries, getCountryCode } from './countries';  // Assuming countries.js exports this
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const CountryDetails = ({isLoading,setLoading}) => {
   const [countryData, setCountryData] = useState(null);
   const { countryName } = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     const decodedCountryName = decodeURIComponent(countryName).replace(/-/g, ' '); // Decode and replace hyphens with spaces
     //const countryName = 'United States';
@@ -29,12 +30,20 @@ const CountryDetails = ({isLoading,setLoading}) => {
 
   if (!countryData) return null;
 
+
   const handleQuickExit = () => {
     setLoading(true);
     setTimeout(() => {
         window.location.href = 'https://www.weather.com';
     }, 1000); // Adjust the delay as needed
   };
+
+  
+  const handleBackToHome = () => {
+    
+    navigate('/'); // Navigate to the home page
+  };
+  
 
   return (
     <div id="country-details">
@@ -69,7 +78,7 @@ const CountryDetails = ({isLoading,setLoading}) => {
         <p>{countryData.countryName}</p>
       )}
       <button className="quick-exit-button" onClick={handleQuickExit}>Quick Exit</button>
-      <button id="back-button">Back to Home</button>
+      <button id="back-button" onClick={handleBackToHome}>Back to Home</button>
     </div>
   );
 }
