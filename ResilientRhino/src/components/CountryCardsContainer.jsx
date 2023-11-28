@@ -2,7 +2,7 @@ import React from 'react';
 import { getCountries, getCountryCode } from './countries';
 import CountryCard from './CountryCard';
 
-const CountryCardsContainer = ({ countries }) => {
+const CountryCardsContainer = ({ countries}) => {
   console.log("countries: ", countries)
   
   return (
@@ -11,7 +11,7 @@ const CountryCardsContainer = ({ countries }) => {
       
       {
         Object.keys(countries).map((countryName) => {
-            return <CountryCard key={countryName} countryName={countryName} />;
+            return <CountryCard key={countryName} countryName={countryName}/>;
         })
     }
 

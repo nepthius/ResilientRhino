@@ -30,6 +30,41 @@
         }
     }
 
+    /* Refresh CSS */
+    .body-loading {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column; /* Ensures content is vertically aligned */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+        overflow: hidden; /* Hide scrollbar */
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .logo {
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .text {
+        color: #757575;
+        font-size: 20px;
+    }
+
+    .body-loading, .body-loading .gradient-background {
+        background: #ffffff; /* Overrides other background styles */
+    }
+    
+    .body-loading ::-webkit-scrollbar {
+        display: none; /* Hides the scrollbar */
+    }
+
     /* Top bar styling */
     .top-bar {
         display: flex;

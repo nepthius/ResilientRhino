@@ -2,7 +2,7 @@ import React from 'react';
 import { getCountryCode } from './countries';
 import { useNavigate } from 'react-router-dom';
 
-const CountryCard = ({ countryName }) => {
+const CountryCard = ({ countryName}) => {
   const countryCode = getCountryCode(countryName);
   const navigate = useNavigate();
   const displayCountryDetails = (countryName) => {

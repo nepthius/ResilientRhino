@@ -46,7 +46,7 @@ function SearchBar() {
                     Search
                 </button>
             </div>
-            <CountryCardsContainer countries={countries} />
+            <CountryCardsContainer countries={countries}/>
         </div>
 
     );

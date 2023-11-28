@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function TopBar() {
+function TopBar({ setLoading }) {
+
     const handleTClick = (event) => {
         // Logic from fishCursor.js
     };
 
     const handleQuickExit = () => {
-        // Logic from quickExit.js
+        setLoading(true);
+        setTimeout(() => {
+            window.location.href = 'https://www.weather.com';
+        }, 1000); // Adjust the delay as needed
     };
 
     return (
