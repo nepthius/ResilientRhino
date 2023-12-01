@@ -19,6 +19,7 @@ This document provides an overview of the codebase structure for the ResilientRh
     - `lightHeart.webp`: A lighter version of the heart image for different UI themes.
 
 - `src/`: The source code for the application.
+  - `assets/`: Assets used throughout the application.
   - `components/`: React components used throughout the application.
     - `CountryCard.jsx`: Component for displaying individual country cards.
     - `CountryCardContainer.jsx`: Container component for grouping country cards.
