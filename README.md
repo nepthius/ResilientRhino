@@ -43,7 +43,7 @@ npm run test
 
 * Github: [@nepthius](https://github.com/nepthius)
 
-* Roles: Founder, Code-Migrator
+* Roles: Founder, Tech-Lead
 
 ## 🤝 Contributing
 
