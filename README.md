@@ -6,6 +6,7 @@
 </p>
 
 > A project designed to provide resources to people contemplating suicide and decrease their stress through a rhino mascot and calming colors.
+> This project is currently moving all raw html, css, and JS into React components, making code more modular, and imporving organization and documentation
 
 ## Install
 
@@ -51,3 +52,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
