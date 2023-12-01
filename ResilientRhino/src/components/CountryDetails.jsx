@@ -1,7 +1,7 @@
 // CountryDetails.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/country-details.css';
-import { getCountries, getCountryCode } from './countries';  // Assuming countries.js exports this
+import { getCountries, getCountryCode } from './countries';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const CountryDetails = ({isLoading,setLoading}) => {
@@ -35,13 +35,13 @@ const CountryDetails = ({isLoading,setLoading}) => {
     setLoading(true);
     setTimeout(() => {
         window.location.href = 'https://www.weather.com';
-    }, 1000); // Adjust the delay as needed
+    }, 1000);
   };
 
   
   const handleBackToHome = () => {
     
-    navigate('/'); // Navigate to the home page
+    navigate('/'); 
   };
   
 
